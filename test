@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Try 1</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="style.css">
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', {packages: ['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+</head>
+<body>
+
+    
+
+        var data = google.visualization.arrayToDataTable([
+          ['Status', 'Number of Tickets'],
+          ['Unopened', 311],
+          ['Open, In Progress', 205],
+          ['Open, Awaiting Update', 182],
+          ['Closed, Awaiting Feedback', 372],
+          ['Closed, Feedback Provided', 407],
+          ['Closed, Archived', 538]
+        ]);
+
+        var options = {
+          title: 'Ticket Status'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+   
+   
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Days Open', 'Number of Tickets'],
+          [ 1, 168],
+          [ 2, 201],
+          [ 3, 215],
+          [ 4, 197],
+          [ 5, 106],
+          [ 6, 53],
+          [ 7, 24],
+          [ 8, 6],
+          [ 9, 1]
+        ]);
+
+        var options = {
+          title: 'Duration of Open Tickets',
+          hAxis: {title: 'Days Open', minValue: 1, maxValue: 9},
+          vAxis: {title: 'Number of Tickets', minValue: 0, maxValue: 220},
+          legend: 'none'
+        };
+
+        var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+        chart.draw(data, options);
+      }
+   
+
+   
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Month', 'Positive Feedback', 'Negative Feedback'],
+          ['January', 305, 27],
+          ['February', 117, 4],
+          ['March', 501, 112],
+          ['April', 285, 120],
+          ['May', 306, 102],
+          ['June', 271, 83],
+          ['July', 197, 72],
+          ['August', 532, 132],
+          ['September', 436, 152],
+          ['October', 341, 107],
+          ['November', 320, 105],
+          ['December', 782, 540]
+        ]);
+
+        var options = {
+          title: 'Ticket Feedback',
+          hAxis: {title: 'Month',  titleTextStyle: {color: '#333'}},
+          vAxis: {minValue: 0}
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+</body>
+
+
+</html>
